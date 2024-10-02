@@ -31,6 +31,7 @@ class OSSUtil:
         self.s3 = boto3.client(
             's3',
             endpoint_url=self.S3_ENDPOINT_URL,
+            region_name='apac', # Check with Cloudflare R2 region list
             aws_access_key_id=self.S3_ACCESS_KEY_ID,
             aws_secret_access_key=self.S3_SECRET_ACCESS_KEY,
             config=Config(signature_version='s3v4')  # 使用S3兼容签名版本
